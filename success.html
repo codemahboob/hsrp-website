@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment Successful</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:#f7f6f1;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+color:#1b1b1b;
+}
+.card{
+width:100%;
+max-width:420px;
+background:#fff;
+border-radius:28px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+overflow:hidden;
+}
+.top{
+padding:45px 30px;
+text-align:center;
+}
+.logo{
+width:72px;
+height:72px;
+margin:auto;
+border-radius:50%;
+background:#eef4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+}
+.logo svg{
+width:42px;
+height:42px;
+stroke:#1e4d9c;
+stroke-width:2;
+fill:none;
+}
+h1{
+font-size:34px;
+font-weight:700;
+margin-bottom:10px;
+}
+.sub{
+font-size:15px;
+color:#777;
+line-height:1.6;
+}
+.line{
+border-top:2px dashed #e8e8e8;
+position:relative;
+}
+.line:before,
+.line:after{
+content:"";
+position:absolute;
+top:-12px;
+width:24px;
+height:24px;
+background:#f7f6f1;
+border-radius:50%;
+}
+.line:before{left:-12px}
+.line:after{right:-12px}
+
+.info{
+padding:28px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+margin-bottom:22px;
+}
+
+.small{
+font-size:12px;
+color:#888;
+text-transform:uppercase;
+letter-spacing:.08em;
+margin-bottom:6px;
+}
+
+.value{
+font-size:18px;
+font-weight:600;
+}
+
+.box{
+background:#f6f6f6;
+border-radius:18px;
+padding:18px;
+margin-bottom:22px;
+}
+
+.item{
+margin-bottom:16px;
+}
+
+.item:last-child{
+margin:0;
+}
+
+.label{
+font-size:13px;
+color:#777;
+margin-bottom:5px;
+}
+
+.button{
+display:block;
+width:100%;
+text-align:center;
+background:#1b1b1b;
+color:#fff;
+text-decoration:none;
+padding:16px;
+border-radius:14px;
+font-weight:600;
+transition:.2s;
+}
+
+.button:hover{
+opacity:.9;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="top">
+
+<div class="logo">
+<svg viewBox="0 0 24 24">
+<path d="M20 7L10 17l-5-5"/>
+</svg>
+</div>
+
+<h1>Thank you!</h1>
+
+<p class="sub">
+Your HSRP order has been placed successfully.
+We'll start processing it shortly.
+</p>
+
+</div>
+
+<div class="line"></div>
+
+<div class="info">
+
+<div class="row">
+<div>
+<div class="small">Order ID</div>
+<div class="value">BP20260702001</div>
+</div>
+
+<div style="text-align:right">
+<div class="small">Amount</div>
+<div class="value">₹650</div>
+</div>
+</div>
+
+<div class="row">
+<div>
+<div class="small">Status</div>
+<div class="value" style="color:#1e4d9c">Paid</div>
+</div>
+
+<div style="text-align:right">
+<div class="small">Date</div>
+<div class="value">02 Jul 2026</div>
+</div>
+</div>
+
+<div class="box">
+
+<div class="item">
+<div class="label">Vehicle Number</div>
+<div class="value">JH14AB1234</div>
+</div>
+
+<div class="item">
+<div class="label">Payment ID</div>
+<div class="value">pay_Q2A8JX98L81</div>
+</div>
+
+<div class="item">
+<div class="label">Delivery</div>
+<div class="value">3–5 Working Days</div>
+</div>
+
+</div>
+
+<a href="index.html" class="button">
+Back to Home
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
