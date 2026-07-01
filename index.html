@@ -782,14 +782,18 @@ payNowBtn.addEventListener('click',()=>{
     name: "BharatPlate HSRP",
     description: `${labelText} — ${state.text} (${state.side})`,
     // order_id: "order_xxxxxx",       // ← from your backend
-    prefill: { name, contact: phone },
     notes: {
-      plate_number: state.text,
-      vehicle_type: activeVehicleKey(),
-      sides: state.side,
-      delivery_address: `${street}, ${city} - ${pin}, ${stateV}`,
-      landmark: document.getElementById('addrLandmark').value
-    },
+  customer_name: name,
+  customer_phone: phone,
+  customer_city: city,
+  customer_state: stateV,
+  customer_pincode: pin,
+  plate_number: state.text,
+  vehicle_type: activeVehicleKey(),
+  sides: state.side,
+  delivery_address: `${street}, ${city} - ${pin}, ${stateV}`,
+  landmark: document.getElementById('addrLandmark').value
+},
     theme: { color: "#1e4d9c" },
     handler: function(response){
       // if (typeof fbq==='function') fbq('track','Purchase',{value:amountRupees,currency:'INR'});
