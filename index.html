@@ -775,37 +775,52 @@ payNowBtn.addEventListener('click',()=>{
   //  2. Add order_id below
   //  3. Verify payment signature server-side, then fire Purchase pixel
   // ================================================================
-  const options = {
-    key: "rzp_live_T8Hf8OyhfWilCb",  // ← replace with your Key ID
-    amount: amountRupees * 100,
-    currency: "INR",
-    name: "BharatPlate HSRP",
-    description: `${labelText} — ${state.text} (${state.side})`,
-    // order_id: "order_xxxxxx",       // ← from your backend
-    notes: {
-  customer_name: name,
-  customer_phone: phone,
-  customer_city: city,
-  customer_state: stateV,
-  customer_pincode: pin,
-  plate_number: state.text,
-  vehicle_type: activeVehicleKey(),
-  sides: state.side,
-  delivery_address: `${street}, ${city} - ${pin}, ${stateV}`,
-  landmark: document.getElementById('addrLandmark').value
-},
-    theme: { color: "#1e4d9c" },
-    handler: function(response){
-      // if (typeof fbq==='function') fbq('track','Purchase',{value:amountRupees,currency:'INR'});
-      closeModal();
-      alert("✅ Order placed! (Demo)\nPayment ID: " + (response.razorpay_payment_id || "demo_pay_id") +
-            "\n\nDelivering to:\n" + name + "\n" + street + ", " + city + " - " + pin + ", " + stateV);
-    }
-  };
+ const options = {
+  key: "rzp_live_T8Hf8OyhfWilCb",
+  amount: amountRupees * 100,
+  currency: "INR",
+  name: "BharatPlate HSRP",
+  description: `${labelText} — ${state.text} (${state.side})`,
 
-  if(window.Razorpay){
-    new Razorpay(options).open();
-  } else {
+  notes: {
+    customer_name: name,
+    customer_phone: phone,
+    customer_city: city,
+    customer_state: stateV,
+    customer_pincode: pin,
+    plate_number: state.text,
+    vehicle_type: activeVehicleKey(),
+    sides: state.side,
+    delivery_address: `${street}, ${city} - ${pin}, ${stateV}`,
+    landmark: document.getElementById("addrLandmark").value
+  },
+
+  theme: {
+    color: "#1e4d9c"
+  },
+
+  handler: function (response) {
+
+    window.location.href =
+      "success.html?payment_id=" +
+      response.razorpay_payment_id;
+
+  }
+};
+
+if (window.Razorpay) {
+
+  const rzp = new Razorpay(options);
+
+  rzp.on("payment.failed", function () {
+
+    window.location.href = "failed.html";
+
+  });
+
+  rzp.open();
+
+} else {
     alert("DEMO: Razorpay blocked in preview.\n\nOrder details:\n" +
           labelText + "\nNumber: " + state.text + "\nPlates: " + state.side +
           "\nAmount: ₹" + amountRupees +
