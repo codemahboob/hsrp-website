@@ -535,7 +535,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;text-align:center;color:v
 <script>
 const PRICING = {
   car:               { label:"Car HSRP",               unit:650, single:350, cls:"plate car" },
-  bike:              { label:"Bike HSRP",               unit:450, single:250, cls:"plate bike" },
+  bike:              { label:"Bike HSRP",               unit:450, single:1, cls:"plate bike" },
   "commercial-truck":{ label:"Commercial (Truck) HSRP", unit:750, single:400, cls:"plate commercial-truck commercial" },
   "commercial-car":  { label:"Commercial (Taxi) HSRP",  unit:700, single:380, cls:"plate commercial-car commercial" }
 };
@@ -776,7 +776,7 @@ payNowBtn.addEventListener('click',()=>{
   //  3. Verify payment signature server-side, then fire Purchase pixel
   // ================================================================
   const options = {
-    key: "rzp_test_T7wkVmnTEzkCwa",  // ← replace with your Key ID
+    key: "rzp_live_T8Hf8OyhfWilCb",  // ← replace with your Key ID
     amount: amountRupees * 100,
     currency: "INR",
     name: "BharatPlate HSRP",
