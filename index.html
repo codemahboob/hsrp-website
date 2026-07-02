@@ -799,13 +799,17 @@ payNowBtn.addEventListener('click',()=>{
     color: "#1e4d9c"
   },
 
-  handler: function (response) {
+  handler: function(response){
 
     window.location.href =
-      "success.html?payment_id=" +
-      response.razorpay_payment_id;
+    "success.html?payment_id=" +
+    encodeURIComponent(response.razorpay_payment_id) +
+    "&amount=" +
+    encodeURIComponent(amountRupees) +
+    "&plate=" +
+    encodeURIComponent(state.text);
 
-  }
+}
 };
 
 if (window.Razorpay) {
